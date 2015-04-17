@@ -1,6 +1,5 @@
 (ns healthfinch.text
-  (:require [clojure.string :as str]
-            [clojure.set :as set]))
+  (:require [clojure.string :as str]))
 
 (def stop-words #{"I" "a" "about" "an" "and" "are" "as" "at" "be" "but" "by" "com" "for" "from" "how" "in" "is" "it" "of" "on" "or" "that" "the" "this" "to" "was" "what" "when" "where" "who" "will" "with"})
 
