@@ -19,7 +19,10 @@
         "tokenizer doesn't exclude stop words")
     (is (= ["wine" "dark" "sea"]
            (tokenize "Wine-dark sea"))
-        "tokenizer doesn't handle hypenation")))
+        "tokenizer doesn't handle hypenation")
+    (is (= ["skidoo"]
+           (tokenize "23 skidoo"))
+        "tokenizer excludes numbers")))
 
 (def real-words #{"quick"
                   "brown"
