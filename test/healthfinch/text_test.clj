@@ -17,7 +17,7 @@
     (is (= ["grumpy" "wizards" "make" "toxic" "brew" "evil" "queen" "jack"]
            (tokenize "Grumpy wizards make toxic brew for the evil Queen and Jack."))
         "tokenizer doesn't exclude stop words")
-    (is (= ["wine-dark" "sea"]
+    (is (= ["wine" "dark" "sea"]
            (tokenize "Wine-dark sea"))
         "tokenizer doesn't handle hypenation")))
 
@@ -27,7 +27,14 @@
                   "grumpy"
                   "wizards"
                   "jackdaws"
-                  "wine-dark"})
+                  "wine-dark"
+                  "giant"
+                  "sphinx"
+                  "toxic"
+                  "brew"
+                  "sea"
+                  "evil"
+                  "queen"})
 
 (def stop-word-generator (gen/elements stop-words))
 (def real-word-generator (gen/elements real-words))
