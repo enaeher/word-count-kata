@@ -4,12 +4,14 @@
 (def stop-words #{"I" "a" "about" "an" "and" "are" "as" "at" "be" "but" "by" "com" "for" "from" "how" "in" "is" "it" "of" "on" "or" "that" "the" "this" "to" "was" "what" "when" "where" "who" "will" "with"})
 
 (defn tokenize
-  "Given a string, returns a vector of tokens. Strips punctuation,
+  "Given a string, returns a vector of tokens. Strips punctuation, numerals,
   folds case, and removes stop words."
   [string]
   (-> string
       str/lower-case
-      (str/split #"[^\w]+")
+      (str/replace #"\d" "")
+      str/trim
+      (str/split #"\W+")
       ((partial remove stop-words))))
 
 (defn count-words
