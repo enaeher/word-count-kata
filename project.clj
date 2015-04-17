@@ -7,8 +7,7 @@
                  [compojure "1.3.3"]
                  [ring/ring-defaults "0.1.2"]
                  [hiccup "1.0.5"]
-                 [ring/ring-codec "1.0.0"]
-                 [hiccup-bootstrap "0.1.2"]]
+                 [ring/ring-codec "1.0.0"]]
   :plugins [[lein-ring "0.8.13"]]
   :ring {:handler healthfinch.handler/app}
   :profiles {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
