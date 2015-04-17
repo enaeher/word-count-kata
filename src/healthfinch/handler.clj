@@ -5,7 +5,7 @@
             [ring.util.codec :refer [url-encode]]
             [hiccup.core :as hiccup]
             [hiccup.page :as page]
-            [healthfinch.cache :as core]
+            [healthfinch.cache :as cache]
             [healthfinch.html :as html]
             [healthfinch.text :as text]))
 
@@ -29,8 +29,8 @@
           [:th "URL"]
           [:th "Most freq. word"]
           [:th "Count"]]
-         (if (seq @core/stored-urls)
-           (for [[url counts] @core/stored-urls]
+         (if (seq @cache/stored-urls)
+           (for [[url counts] @cache/stored-urls]
              (let [[word word-count] (first counts)]
                [:tr
                 [:td [:a {:href (str "/parse-url?url=" (url-encode url))} url]]
@@ -40,7 +40,7 @@
   (GET "/parse-url" [url]
        (page-wrapper
         [:table
-         (for [[word count] (core/word-counts-for-url url)]
+         (for [[word count] (cache/word-counts-for-url url)]
            [:tr
             [:td word]
             [:td {:class "numeric"} count]])]))
