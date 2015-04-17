@@ -1,36 +1,19 @@
-# healthfinch
+# word count kata for healthfinch
 
-FIXME: description
+## System Requirements
 
-## Installation
-
-Download from http://example.com/FIXME.
+Install leiningen (available as an OS X Homebrew package and in all reasonable Linux package managers).
 
 ## Usage
 
-FIXME: explanation
+    $ lein ring server-headless
 
-    $ java -jar healthfinch-0.1.0-standalone.jar [args]
+This will start a server `localhost:3000`.
 
-## Options
+    $ lein test
 
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+This will run all tests.
 
 ## License
 
-Copyright © 2015 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+This code is in the public domain.
