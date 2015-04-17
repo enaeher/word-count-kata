@@ -2,9 +2,11 @@
 
 ## System Requirements
 
-Install leiningen (available as an OS X Homebrew package and in all reasonable Linux package managers).
+Requires [Leiningen](http://leiningen.org/) 2.0.0 or greater (available as an OS X Homebrew package and in all reasonable Linux package managers).
 
 ## Usage
+
+In the main project directory:
 
     $ lein ring server-headless
 
