@@ -2,38 +2,7 @@
   (:require [clojure.string :as str]
             [clojure.set :as set]))
 
-(def stop-words #{"I"
-                  "a"
-                  "about"
-                  "an"
-                  "and"
-                  "are"
-                  "as"
-                  "at"
-                  "be"
-                  "but"
-                  "by"
-                  "com"
-                  "for"
-                  "from"
-                  "how"
-                  "in"
-                  "is"
-                  "it"
-                  "of"
-                  "on"
-                  "or"
-                  "that"
-                  "the"
-                  "this"
-                  "to"
-                  "was"
-                  "what"
-                  "when"
-                  "where"
-                  "who"
-                  "will"
-                  "with"})
+(def stop-words #{"I" "a" "about" "an" "and" "are" "as" "at" "be" "but" "by" "com" "for" "from" "how" "in" "is" "it" "of" "on" "or" "that" "the" "this" "to" "was" "what" "when" "where" "who" "will" "with"})
 
 (defn tokenize
   "Given a string, returns a vector of tokens. Strips punctuation,

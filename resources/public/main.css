@@ -1,6 +1,6 @@
 body {
   font-family: sans-serif;
-  width: 40em;
+  width: 50em;
   margin: 1in;
   margin-left: auto;
   margin-right: auto;
@@ -8,10 +8,20 @@ body {
 
 table {
   margin-top: 3em;
+  border-collapse: collapse;
+  width: 100%;
 }
 
 td {
   padding: .5em;
+}
+
+td.numeric {
+  text-align: right;
+}
+
+tr+tr {
+  border-top: 1px solid black;
 }
 
 input {

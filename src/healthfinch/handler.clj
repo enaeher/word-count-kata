@@ -27,15 +27,15 @@
         [:table
          [:tr
           [:th "URL"]
-          [:th "Most frequent word"]
-          [:th "Occurrences"]]
+          [:th "Most freq. word"]
+          [:th "Count"]]
          (if (seq @core/stored-urls)
            (for [[url counts] @core/stored-urls]
              (let [[word word-count] (first counts)]
                [:tr
                 [:td [:a {:href (str "/parse-url?url=" (url-encode url))} url]]
                 [:td word]
-                [:td word-count]]))
+                [:td {:class "numeric"} word-count]]))
            [:tr [:td {:colspan 3} "(No URLs stored.)"]])]))  
   (GET "/parse-url" [url]
        (page-wrapper
@@ -43,7 +43,7 @@
          (for [[word count] (core/word-counts-for-url url)]
            [:tr
             [:td word]
-            [:td count]])]))
+            [:td {:class "numeric"} count]])]))
   (route/resources "/")
   (route/not-found "Not Found"))
 
