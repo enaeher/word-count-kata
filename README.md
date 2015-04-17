@@ -8,7 +8,7 @@ Install leiningen (available as an OS X Homebrew package and in all reasonable L
 
     $ lein ring server-headless
 
-This will start a server `localhost:3000`.
+This will start a server listening on `localhost:3000`.
 
     $ lein test
 
