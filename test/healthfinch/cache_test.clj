@@ -10,11 +10,9 @@
           cache-misses (atom 0)
           url "http://example.com"]
       (with-redefs [stored-urls (atom {})
-                    html/parse-url (constantly nil) ; Don't make HTTP requests during tests
-                    html/extract-text (constantly nil)
-                    text/count-words (fn [& _]
-                                       (swap! cache-misses inc)
-                                       counts)]
+                    word-counts-for-url*(fn [& _]
+                                          (swap! cache-misses inc)
+                                          counts)]
         (is (= (word-counts-for-url url)
                (word-counts-for-url url))
             "Subsequent calls should return the same result")
