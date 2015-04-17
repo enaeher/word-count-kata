@@ -48,6 +48,9 @@
 (defspec word-counting
   (prop/for-all
    [para paragraph-generator]
-   (is (= (sort (tokenize para))
-          (sort (mapcat explode-word-count (count-words para))))
-       "The words in the count should match the tokenized words.")))
+   (let [counts (count-words para)]
+     (is (= (sort (tokenize para))
+            (sort (mapcat explode-word-count counts)))
+         "The words in the count should match the tokenized words.")
+     (is (apply >= (map second counts))
+         "Counts should be sorted in descending order of frequency"))))
