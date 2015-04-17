@@ -51,7 +51,7 @@
   (fn [request]
     (try (f request)
          (catch java.net.MalformedURLException e
-           {:body (page-wrapper "Invalid URL.")}))))
+           {:status 200 :body (page-wrapper "Invalid URL.")}))))
 
 (def app
   (-> app-routes
